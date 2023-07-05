@@ -19,3 +19,7 @@ jobs:
           context: .
           push: true
           tags: your-registry/your-image-name:latest
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      DOCKER_AUTH: ${{ secrets.DOCKER_AUTH }}
