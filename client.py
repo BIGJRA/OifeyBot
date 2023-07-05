@@ -35,7 +35,8 @@ class Oifey(discord.AutoShardedClient):
 
     async def on_ready(self) -> None:
         print(f"Logged in as {self.user} {self.user.id}!")
-        change_status.start()
+        if not change_status.is_running():
+            change_status.start()
         
         ping = f"<@{self.user.id}> "
         
